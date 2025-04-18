@@ -1,0 +1,183 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tactics UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
+</head>
+<div class="container-fluid my-4">
+    <div class="row">
+      <!-- Left Team (Red Team) -->
+      <div class="col-12 col-md-6 pe-md-2">
+        <div class="p-2 h-100" style="background-color: salmon;">
+          
+          <!-- Character 1 (FULL structure restored) -->
+          <div class="character-card mb-4 shadow-sm p-2" style="background-color: #f8d7da; border: 2px solid black;">
+            <div class="container p-2">
+              <div class="row gx-0 mb-4 align-items-center">
+                <!-- Rank -->
+                <div class="col-1">
+                  <div class="card text-center h-100 text-nowrap">
+                    <div class="card-header small">Rank</div>
+                    <div class="card-body p-2"><strong>2</strong></div>
+                  </div>
+                </div>
+  
+                <!-- Name -->
+                <div class="col-6 d-flex align-items-center justify-content-center text-nowrap">
+                  <h3 class="mb-0 text-center fs-5 fs-md-4 fs-lg-3">Alpha</h3>
+                </div>
+  
+                <!-- Body/Type cards -->
+                <div class="col-1">
+                  <div class="card text-center h-100 text-nowrap">
+                    <div class="card-header small">Body 1</div>
+                    <div class="card-body p-2"><strong>Large</strong></div>
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="card text-center h-100 text-nowrap">
+                    <div class="card-header small">Body 2</div>
+                    <div class="card-body p-2"><strong>Armored</strong></div>
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="card text-center h-100 text-nowrap">
+                    <div class="card-header small">Body 3</div>
+                    <div class="card-body p-2"><strong>-</strong></div>
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="card text-center h-100 text-nowrap">
+                    <div class="card-header small">Type 1</div>
+                    <div class="card-body p-2"><strong>Tank</strong></div>
+                  </div>
+                </div>
+                <div class="col-1">
+                  <div class="card text-center h-100 text-nowrap">
+                    <div class="card-header small">Type 2</div>
+                    <div class="card-body p-2"><strong>Steel</strong></div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Stats Section -->
+              <div class="row row-cols-4 gx-2 mb-4">
+                <!-- HP -->
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-header">HP</div>
+                    <div class="card-body p-2">
+                      <div class="fs-4" id="hp-value-1">10</div>
+                      <hr class="my-2">
+                      <small>Max: 20</small>
+                    </div>
+                    <div class="card-footer d-flex justify-content-center gap-2 p-2">
+                      <button class="btn btn-sm btn-dark btn-minus" onclick="decrease('hp-value-1')">-</button>
+                      <button class="btn btn-sm btn-dark btn-plus" onclick="increase('hp-value-1')">+</button>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Shield -->
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-header">Shield</div>
+                    <div class="card-body p-2">
+                      <div class="fs-4" id="shield-value-1">5</div>
+                      <hr class="my-2">
+                      <small>Max: 20</small>
+                    </div>
+                    <div class="card-footer d-flex justify-content-center gap-2 p-2">
+                      <button class="btn btn-sm btn-dark btn-minus" onclick="decrease('shield-value-1')">-</button>
+                      <button class="btn btn-sm btn-dark btn-plus" onclick="increase('shield-value-1')">+</button>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Power -->
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-header">Power</div>
+                    <div class="card-body p-2">
+                      <div class="fs-4" id="power-value-1">8</div>
+                      <hr class="my-2">
+                      <small>Max: 20</small>
+                    </div>
+                    <div class="card-footer d-flex justify-content-center gap-2 p-2">
+                      <button class="btn btn-sm btn-dark btn-minus" onclick="decrease('power-value-1')">-</button>
+                      <button class="btn btn-sm btn-dark btn-plus" onclick="increase('power-value-1')">+</button>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Move -->
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-header">Move</div>
+                    <div class="card-body p-2">
+                      <div class="fs-4" id="move-value-1">3</div>
+                      <hr class="my-2">
+                      <small>Max: 20</small>
+                    </div>
+                    <div class="card-footer d-flex justify-content-center gap-2 p-2">
+                      <button class="btn btn-sm btn-dark btn-minus" onclick="decrease('move-value-1')">-</button>
+                      <button class="btn btn-sm btn-dark btn-plus" onclick="increase('move-value-1')">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Ability -->
+              <div class="card">
+                <div class="card-header text-center">Ability</div>
+                <div class="card-body text-center">
+                  <h5 class="card-title" id="ability-name-1">Shield Wall</h5>
+                  <p class="card-text" id="ability-description-1">
+                    Reduces incoming damage by 50% for two turns.
+                  </p>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+          <!-- Placeholders for Character 2 and 3 -->
+          <div class="character-card mb-4 shadow-sm p-2" style="background-color: #f8d7da; border: 2px solid black;">
+            <!-- Character 2 will be inserted here -->
+          </div>
+  
+          <div class="character-card mb-4 shadow-sm p-2" style="background-color: #f8d7da; border: 2px solid black;">
+            <!-- Character 3 will be inserted here -->
+          </div>
+  
+        </div>
+      </div>
+  
+      <!-- Right Team (Blue Team) -->
+      <div class="col-12 col-md-6 ps-md-2">
+        <div class="p-2 h-100" style="background-color: lightblue;">
+          <!-- Placeholders for Characters 4, 5, 6 -->
+          <div class="character-card mb-4 shadow-sm p-2" style="background-color: #d1ecf1; border: 2px solid black;">
+            <!-- Character 4 will be inserted here -->
+          </div>
+  
+          <div class="character-card mb-4 shadow-sm p-2" style="background-color: #d1ecf1; border: 2px solid black;">
+            <!-- Character 5 will be inserted here -->
+          </div>
+  
+          <div class="character-card mb-4 shadow-sm p-2" style="background-color: #d1ecf1; border: 2px solid black;">
+            <!-- Character 6 will be inserted here -->
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  

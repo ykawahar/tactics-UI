@@ -1,0 +1,152 @@
+<template id="character-card-template">
+    <div class="character-card mb-4 shadow-sm p-2" style="border: 2px solid black;">
+      <div class="container p-2">
+        
+        <!-- Top Row: Rank, Name, Body/Type -->
+        <div class="row gx-0 mb-4 align-items-center">
+          
+          <!-- Rank -->
+          <div class="col-1">
+            <div class="card text-center h-100 text-nowrap">
+              <div class="card-header small">Rank</div>
+              <div class="card-body p-2">
+                <strong class="rank">Rank</strong>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Name -->
+          <div class="col-6 d-flex align-items-center justify-content-center text-nowrap">
+            <h3 class="mb-0 text-center fs-5 fs-md-4 fs-lg-3 name">Character Name</h3>
+          </div>
+  
+          <!-- Body/Type Cards -->
+          <div class="col-1">
+            <div class="card text-center h-100 text-nowrap">
+              <div class="card-header small">Body 1</div>
+              <div class="card-body p-2">
+                <strong class="body1">Body 1</strong>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-1">
+            <div class="card text-center h-100 text-nowrap">
+              <div class="card-header small">Body 2</div>
+              <div class="card-body p-2">
+                <strong class="body2">Body 2</strong>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-1">
+            <div class="card text-center h-100 text-nowrap">
+              <div class="card-header small">Body 3</div>
+              <div class="card-body p-2">
+                <strong class="body3">Body 3</strong>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-1">
+            <div class="card text-center h-100 text-nowrap">
+              <div class="card-header small">Type 1</div>
+              <div class="card-body p-2">
+                <strong class="type1">Type 1</strong>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-1">
+            <div class="card text-center h-100 text-nowrap">
+              <div class="card-header small">Type 2</div>
+              <div class="card-body p-2">
+                <strong class="type2">Type 2</strong>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- Stats Section -->
+        <div class="row row-cols-4 gx-2 mb-4">
+  
+          <!-- HP -->
+          <div class="col">
+            <div class="card text-center">
+              <div class="card-header">HP</div>
+              <div class="card-body p-2">
+                <div class="fs-4 hp-value" id="hp-1">0</div>
+                <hr class="my-2">
+                <small>Max: <span class="hp-max">0</span></small>
+              </div>
+              <div class="card-footer d-flex justify-content-center gap-2 p-2">
+                <button class="btn btn-sm btn-dark btn-minus" onclick="decrease('hp-1')">-</button>
+                <button class="btn btn-sm btn-dark btn-plus" onclick="increase('hp-1')">+</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Shield -->
+          <div class="col">
+            <div class="card text-center">
+              <div class="card-header">Shield</div>
+              <div class="card-body p-2">
+                <div class="fs-4 shield-value" id="shield-1">0</div>
+                <hr class="my-2">
+                <small>Max: <span class="shield-max">0</span></small>
+              </div>
+              <div class="card-footer d-flex justify-content-center gap-2 p-2">
+                <button class="btn btn-sm btn-dark btn-minus" onclick="decrease('shield-1')">-</button>
+                <button class="btn btn-sm btn-dark btn-plus" onclick="increase('shield-1')">+</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Power -->
+          <div class="col">
+            <div class="card text-center">
+              <div class="card-header">Power</div>
+              <div class="card-body p-2">
+                <div class="fs-4 power-value" id="power-1">0</div>
+                <hr class="my-2">
+                <small>Max: <span class="power-max">0</span></small>
+              </div>
+              <div class="card-footer d-flex justify-content-center gap-2 p-2">
+                <button class="btn btn-sm btn-dark btn-minus" onclick="decrease('power-1')">-</button>
+                <button class="btn btn-sm btn-dark btn-plus" onclick="increase('power-1')">+</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Move -->
+          <div class="col">
+            <div class="card text-center">
+              <div class="card-header">Move</div>
+              <div class="card-body p-2">
+                <div class="fs-4 move-value" id="move-1">0</div>
+                <hr class="my-2">
+                <small>Max: <span class="move-max">0</span></small>
+              </div>
+              <div class="card-footer d-flex justify-content-center gap-2 p-2">
+                <button class="btn btn-sm btn-dark btn-minus" onclick="decrease('move-1')">-</button>
+                <button class="btn btn-sm btn-dark btn-plus" onclick="increase('move-1')">+</button>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- Ability Section -->
+        <div class="card">
+          <div class="card-header text-center">Ability</div>
+          <div class="card-body text-center">
+            <h5 class="ability-name">Ability Name</h5>
+            <p class="ability-description">Ability description goes here.</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </template>
+  
