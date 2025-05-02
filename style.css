@@ -11,7 +11,7 @@ html, body {
 
   @media (max-height: 900px) {
     html {
-      font-size: 0.6rem;
+      font-size: 0.7rem;
     }
   }
 
@@ -85,7 +85,7 @@ html, body {
 .fit-text {
     font-size: clamp(0.5rem, 1vw, 0.8rem);
     white-space: nowrap;
-    overflow: show;
+    overflow: visible;
     text-overflow: unset;     /* don't truncate */
     min-width: 0;             /* allow it to shrink */
     display: block;           /* important for measuring width */
@@ -111,6 +111,7 @@ html, body {
     align-items: center;
     justify-content: center;
     padding: 0.25rem;
+    min-width: 0;
   }
   
   .stat-button {
