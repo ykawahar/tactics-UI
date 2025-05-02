@@ -7,6 +7,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -15,14 +16,14 @@
   <div class="row">
     <!-- Left team (Red Team) -->
     <div class="col-12 col-md-6 pe-md-2">
-      <div class="p-2 h-100" style="background-color: salmon;">
+      <div class="team-red">
         <!-- Character cards will be injected here -->
       </div>
     </div>
 
     <!-- Right team (Blue Team) -->
     <div class="col-12 col-md-6 ps-md-2">
-      <div class="p-2 h-100" style="background-color: lightblue;">
+      <div class="team-blue">
         <!-- Character cards will be injected here -->
       </div>
     </div>
@@ -36,6 +37,45 @@ const characters = [
     id: 1,
     name: 'Alpha',
     rank: 2,
+    role: 'Fighter',
+    body1: 'Large',
+    body2: 'Armored',
+    body3: '-',
+    type1: 'Tank',
+    type2: 'Steel',
+    hp: 10,
+    shield: 5,
+    power: 8,
+    move: 3,
+    max: 20,
+    abilityName: 'Shield Wall',
+    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
+    teamBgColor: '#f8d7da' // red team color
+  },
+  {
+    id: 1,
+    name: 'Alpha',
+    rank: 2,
+    role: 'Fighter',
+    body1: 'Large',
+    body2: 'Armored',
+    body3: '-',
+    type1: 'Tank',
+    type2: 'Steel',
+    hp: 10,
+    shield: 5,
+    power: 8,
+    move: 3,
+    max: 20,
+    abilityName: 'Shield Wall',
+    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
+    teamBgColor: '#f8d7da' // red team color
+  },
+  {
+    id: 1,
+    name: 'Alpha',
+    rank: 2,
+    role: 'Fighter',
     body1: 'Large',
     body2: 'Armored',
     body3: '-',
@@ -61,9 +101,12 @@ function createCharacterCard(character) {
   const template = document.getElementById('character-card-template');
   const clone = template.content.cloneNode(true);
 
+  // Background color (team color)
   clone.querySelector('.character-card').style.backgroundColor = character.teamBgColor;
 
+  // Set main fields
   clone.querySelector('.rank').innerText = character.rank;
+  clone.querySelector('.role').innerText = character.role || '-'; // if you have role
   clone.querySelector('.name').innerText = character.name;
 
   clone.querySelector('.body1').innerText = character.body1;
@@ -72,6 +115,10 @@ function createCharacterCard(character) {
   clone.querySelector('.type1').innerText = character.type1;
   clone.querySelector('.type2').innerText = character.type2;
 
+  clone.querySelector('.ability-name').innerText = character.abilityName;
+  clone.querySelector('.ability-description').innerText = character.abilityDescription;
+
+  // Set stat values
   clone.querySelector('.hp-value').innerText = character.hp;
   clone.querySelector('.shield-value').innerText = character.shield;
   clone.querySelector('.power-value').innerText = character.power;
@@ -82,25 +129,25 @@ function createCharacterCard(character) {
   clone.querySelector('.power-max').innerText = character.max;
   clone.querySelector('.move-max').innerText = character.max;
 
-  clone.querySelector('.ability-name').innerText = character.abilityName;
-  clone.querySelector('.ability-description').innerText = character.abilityDescription;
-
-  // 🔥 Auto-assign IDs here:
+  // Dynamically update IDs for each stat block
   clone.querySelector('.hp-value').id = `hp-${character.id}`;
   clone.querySelector('.shield-value').id = `shield-${character.id}`;
   clone.querySelector('.power-value').id = `power-${character.id}`;
   clone.querySelector('.move-value').id = `move-${character.id}`;
 
-  // Also update the onclick functions in buttons
-  const buttons = clone.querySelectorAll('.btn-minus, .btn-plus');
-  buttons.forEach(button => {
-    const isMinus = button.classList.contains('btn-minus');
-    const statType = button.closest('.card').querySelector('.fs-4').classList[1].split('-')[0]; // hp, shield, etc.
-    button.setAttribute('onclick', `${isMinus ? 'decrease' : 'increase'}('${statType}-${character.id}')`);
+  // Update button onclicks (+ and -) dynamically
+  const stats = ['hp', 'shield', 'power', 'move'];
+  stats.forEach(stat => {
+    const minusBtn = clone.querySelector(`.${stat}-value`).closest('.card').querySelector('.btn-minus');
+    const plusBtn = clone.querySelector(`.${stat}-value`).closest('.card').querySelector('.btn-plus');
+
+    if (minusBtn) minusBtn.setAttribute('onclick', `decrease('${stat}-${character.id}')`);
+    if (plusBtn) plusBtn.setAttribute('onclick', `increase('${stat}-${character.id}')`);
   });
 
   return clone;
 }
+
 
 
 function updateButtons(id) {
