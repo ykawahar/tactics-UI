@@ -1,59 +1,5 @@
 [
     {
-      "id": -1,
-      "name": "Alpha",
-      "rank": 2,
-      "role": "Fighter",
-      "body": ["Large", "Armored", "-"],
-      "types": ["Tank", "Steel"],
-      "stats": {
-        "hp": { "start": 10, "max": 20 },
-        "shield": { "start": 5, "max": 10 },
-        "power": { "start": 8, "max": 15 },
-        "move": { "start": 3, "max": 6 }
-      },
-      "ability": {
-        "name": "Shield Wall",
-        "description": "Reduces incoming damage by 50% for two turns."
-      }
-    },
-    {
-      "id": -2,
-      "name": "Beta",
-      "rank": 3,
-      "role": "Support",
-      "body": ["Slim", "Floating", "-"],
-      "types": ["Healer", "Psychic"],
-      "stats": {
-        "hp": { "start": 6, "max": 12 },
-        "shield": { "start": 2, "max": 6 },
-        "power": { "start": 4, "max": 8 },
-        "move": { "start": 4, "max": 5 }
-      },
-      "ability": {
-        "name": "Restore",
-        "description": "Heals all allies for 4 HP."
-      }
-    },
-    {
-      "id": -3,
-      "name": "Gamma",
-      "rank": 5,
-      "role": "Assassin",
-      "body": ["Small", "Shadowy", "-"],
-      "types": ["Dark", "Speed"],
-      "stats": {
-        "hp": { "start": 7, "max": 10 },
-        "shield": { "start": 0, "max": 3 },
-        "power": { "start": 10, "max": 12 },
-        "move": { "start": 6, "max": 8 }
-      },
-      "ability": {
-        "name": "Ambush",
-        "description": "Ignores shields and doubles damage when attacking first."
-      }
-    },
-    {
         "id": 6,
         "name": "Charizard",
         "rank": 6,
@@ -68,7 +14,133 @@
         },
         "ability": {
           "name": "Blaze",
-          "description": "Deal +1 damage with [Fire] moves at half HP or less."
+          "description": "Deal +1 damage with [Fire] moves at half [HP] or less."
+        }
+      },
+      {
+        "id": 155,
+        "name": "Cyndaquil",
+        "rank": 6,
+        "role": "Tank",
+        "body": ["Walk"],
+        "types": ["Fire"],
+        "stats": {
+          "hp": { "start": 4, "max": 4 },
+          "shield": { "start": 0, "max": 7 },
+          "power": { "start": 1, "max": 1 },
+          "move": { "start": 1, "max": 1 }
+        },
+        "ability": {
+          "name": "Flash Fire",
+          "description": "Unless Cyndaquil is the only remaining Pokémon on your team, gain +1 [Shield] if hit by a [Fire] move instead of taking damage."
+        }
+      },
+      {
+        "id": 58,
+        "name": "Growlithe",
+        "rank": 2,
+        "role": "Fighter",
+        "body": ["Walk"],
+        "types": ["Fire"],
+        "stats": {
+          "hp": { "start": 6, "max": 6 },
+          "shield": { "start": 0, "max": 2 },
+          "power": { "start": 1, "max": 4 },
+          "move": { "start": 1, "max": 3 }
+        },
+        "ability": {
+          "name": "Intimidate",
+          "description": "Once per round, enemies within Range 2 of Growlithe deal -1 damage with [Contact] moves (min. 1 dmg)."
+        }
+      },
+      {
+        "id": 7,
+        "name": "Squirtle",
+        "rank": 2,
+        "role": "Tank",
+        "body": ["Walk", "Swim"],
+        "types": ["Water"],
+        "stats": {
+          "hp": { "start": 5, "max": 5 },
+          "shield": { "start": 0, "max": 5 },
+          "power": { "start": 1, "max": 2 },
+          "move": { "start": 1, "max": 1 }
+        },
+        "ability": {
+          "name": "Torrent",
+          "description": "At half [HP] or less, add the number of [Shield] on Squirtle to damage."
+        }
+      },
+      {
+        "id": 158,
+        "name": "Feraligatr",
+        "rank": 6,
+        "role": "Fighter",
+        "body": ["Walk", "Swim"],
+        "types": ["Water"],
+        "stats": {
+          "hp": { "start": 8, "max": 8 },
+          "shield": { "start": 0, "max": 5 },
+          "power": { "start": 1, "max": 5 },
+          "move": { "start": 1, "max": 4 }
+        },
+        "ability": {
+          "name": "Sheer Force",
+          "description": "If a Feraligatr card is discarded as an Action, an adjacent target can be pushed by up to 2 spaces. If the target is an enemy, the opponent must also discard a card."
+        }
+      },
+      {
+        "id": 502,
+        "name": "Dewott",
+        "rank": 3,
+        "role": "Fighter",
+        "body": ["Walk", "Swim"],
+        "types": ["Water"],
+        "stats": {
+          "hp": { "start": 8, "max": 8 },
+          "shield": { "start": 3, "max": 3 },
+          "power": { "start": 1, "max": 4 },
+          "move": { "start": 1, "max": 3 }
+        },
+        "ability": {
+          "name": "Shell Armor",
+          "description": "[Shield] cannot be ignored by incoming attacks. If hit by a [Contact] <em>Slicing</em> move, deal 1 dmg back to the attacker."
+        }
+      },
+      {
+        "id": 257,
+        "name": "Blaziken",
+        "rank": 6,
+        "role": "Fighter",
+        "body": ["Walk"],
+        "types": ["Fire", "Fighting"],
+        "stats": {
+          "hp": { "start": 8, "max": 8 },
+          "shield": { "start": 4, "max": 4 },
+          "power": { "start": 1, "max": 6 },
+          "move": { "start": 1, "max": 4 }
+        },
+        "ability": {
+          "name": "Speed Boost",
+          "description": "At the end of your turn, Blaziken gains +1 [Move]."
+        }
+      },
+      {
+        "id": 818,
+        "name": "Inteleon",
+        "rank": 6,
+        "role": "Mage",
+        "body": ["Walk", "Swim"],
+        "types": ["Water"],
+        "stats": {
+          "hp": { "start": 8, "max": 8 },
+          "shield": { "start": 3, "max": 3 },
+          "power": { "start": 1, "max": 6 },
+          "move": { "start": 1, "max": 6 }
+        },
+        "ability": {
+          "name": "Sniper",
+          "description": "Ignore [Shield] when attacking from range 3 or greater. At the end of your turn, if Inteleon did not move or perform an action, it becomes <strong>Guarded</strong>."
         }
       }
   ]

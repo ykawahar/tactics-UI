@@ -1,15 +1,17 @@
 const iconMap = {
-    "-":          { type: "text", value: "-" }, // fallback
-
     // Font Awesome examples
     "Large":      { type: "fa", value: "fa-expand" },
     "Armored":    { type: "fa", value: "fa-shield-alt" },
-    "Tank":       { type: "fa", value: "fa-truck-monster" },
-    "Steel":      { type: "fa", value: "fa-industry" },
+    "Tank":       { type: "fa", value: "fa-shield-alt" },
     "Fighter":    { type: "fa", value: "fa-fist-raised" },
     "Mage":       { type: "fa", value: "fa-hat-wizard" },
+    "Assassin":       { type: "fa", value: "fa-user-ninja" },
+    "Support":       { type: "fa", value: "fa-staff-snake" },
 
-
+    //Stats
+    "HP":         { type: "fa", value: "fa-solid fa-heart" },
+    "Shield":    { type: "fa", value: "fa-solid fa-shield" },
+    "Move":    { type: "fa", value: "fa-solid fa-arrow-right" },
 
     // Types
     "Normal":    { type: "img", value: "icons/types/Normal_icon_HOME3.png" },
@@ -34,8 +36,15 @@ const iconMap = {
     //Categories
     "Contact":    { type: "img", value: "icons/category/PhysicalIC_Masters.png" },
     "Ranged":    { type: "img", value: "icons/category/SpecialIC_Masters.png" },
-    "Status":    { type: "img", value: "icons/category/StatusIC_Masters.png" }
+    "Status":    { type: "img", value: "icons/category/StatusIC_Masters.png" },
 
+    //Body
+    "Walk":    { type: "fa", value: "fa-solid fa-horse" },
+    "Flight":    { type: "fa", value: "fa-solid fa-dove" },
+    "Swim":    { type: "fa", value: "fa-solid fa-fish" },
 
+    
+    // fallback
+    "-":          { type: "text", value: "-" }
   };
   
