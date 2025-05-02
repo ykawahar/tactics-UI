@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,232 +12,210 @@
 </head>
 
 <body>
-
-<div class="container-fluid m-0 p-0">
-  <div class="row">
-    <!-- Left team (Red Team) -->
-    <div class="col-12 col-md-6 pe-md-2">
-      <div class="team-red">
-        <!-- Character cards will be injected here -->
-      </div>
+  <datalist id="character-options">
+    <!-- JS will populate this -->
+  </datalist>
+  <div class="container-fluid m-0 p-0">
+    <div class="d-flex justify-content-end px-3 py-2">
+      <button id="reset-all-stats" class="btn btn-sm btn-danger">
+        <strong>Reset All Stats</strong>
+      </button>
     </div>
+    <div class="row gx-1 full-height">
+      <!-- Left team (Red Team) -->
+      <div class="col-12 col-md-6">
+        <div class="team-red">
+          <!-- Character cards will be injected here -->
+        </div>
+      </div>
 
-    <!-- Right team (Blue Team) -->
-    <div class="col-12 col-md-6 ps-md-2">
-      <div class="team-blue">
-        <!-- Character cards will be injected here -->
+      <!-- Right team (Blue Team) -->
+      <div class="col-12 col-md-6">
+        <div class="team-blue">
+          <!-- Character cards will be injected here -->
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- JavaScript -->
-<script>
-const characters = [
-  {
-    id: 1,
-    name: 'Alpha',
-    rank: 2,
-    role: 'Fighter',
-    body1: 'Large',
-    body2: 'Armored',
-    body3: '-',
-    type1: 'Tank',
-    type2: 'Steel',
-    hp: 10,
-    shield: 5,
-    power: 8,
-    move: 3,
-    max: 20,
-    abilityName: 'Shield Wall',
-    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
-    teamBgColor: '#f8d7da' // red team color
-  },
-  {
-    id: 1,
-    name: 'Alpha',
-    rank: 2,
-    role: 'Fighter',
-    body1: 'Large',
-    body2: 'Armored',
-    body3: '-',
-    type1: 'Tank',
-    type2: 'Steel',
-    hp: 10,
-    shield: 5,
-    power: 8,
-    move: 3,
-    max: 20,
-    abilityName: 'Shield Wall',
-    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
-    teamBgColor: '#f8d7da' // red team color
-  },
-  {
-    id: 1,
-    name: 'Alpha',
-    rank: 2,
-    role: 'Fighter',
-    body1: 'Large',
-    body2: 'Armored',
-    body3: '-',
-    type1: 'Tank',
-    type2: 'Steel',
-    hp: 10,
-    shield: 5,
-    power: 8,
-    move: 3,
-    max: 20,
-    abilityName: 'Shield Wall',
-    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
-    teamBgColor: '#f8d7da' // red team color
-  },
-  {
-    id: 1,
-    name: 'Alpha',
-    rank: 2,
-    role: 'Fighter',
-    body1: 'Large',
-    body2: 'Armored',
-    body3: '-',
-    type1: 'Tank',
-    type2: 'Steel',
-    hp: 10,
-    shield: 5,
-    power: 8,
-    move: 3,
-    max: 20,
-    abilityName: 'Shield Wall',
-    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
-    teamBgColor: '#f8d7da' // red team color
-  }
-];
+  <!-- JavaScript -->
+  <script>
+    let allCharacters = [];
 
-// Stat max values
-const statMax = {
-  1: 20,
-};
-
-function createCharacterCard(character) {
-  const template = document.getElementById('character-card-template');
-  const clone = template.content.cloneNode(true);
-
-  // Background color (team color)
-  clone.querySelector('.character-card').style.backgroundColor = character.teamBgColor;
-
-  // Set main fields
-  clone.querySelector('.rank').innerText = character.rank;
-  clone.querySelector('.role').innerText = character.role || '-'; // if you have role
-  clone.querySelector('.name').innerText = character.name;
-
-  clone.querySelector('.body1').innerText = character.body1;
-  clone.querySelector('.body2').innerText = character.body2;
-  clone.querySelector('.body3').innerText = character.body3;
-  clone.querySelector('.type1').innerText = character.type1;
-  clone.querySelector('.type2').innerText = character.type2;
-
-  clone.querySelector('.ability-name').innerText = character.abilityName;
-  clone.querySelector('.ability-description').innerText = character.abilityDescription;
-
-  // Set stat values
-  clone.querySelector('.hp-value').innerText = character.hp;
-  clone.querySelector('.shield-value').innerText = character.shield;
-  clone.querySelector('.power-value').innerText = character.power;
-  clone.querySelector('.move-value').innerText = character.move;
-
-  clone.querySelector('.hp-max').innerText = character.max;
-  clone.querySelector('.shield-max').innerText = character.max;
-  clone.querySelector('.power-max').innerText = character.max;
-  clone.querySelector('.move-max').innerText = character.max;
-
-  // Dynamically update IDs for each stat block
-  clone.querySelector('.hp-value').id = `hp-${character.id}`;
-  clone.querySelector('.shield-value').id = `shield-${character.id}`;
-  clone.querySelector('.power-value').id = `power-${character.id}`;
-  clone.querySelector('.move-value').id = `move-${character.id}`;
-
-  // Update button onclicks (+ and -) dynamically
-  const stats = ['hp', 'shield', 'power', 'move'];
-  stats.forEach(stat => {
-    const minusBtn = clone.querySelector(`.${stat}-value`).closest('.card').querySelector('.btn-minus');
-    const plusBtn = clone.querySelector(`.${stat}-value`).closest('.card').querySelector('.btn-plus');
-
-    if (minusBtn) minusBtn.setAttribute('onclick', `decrease('${stat}-${character.id}')`);
-    if (plusBtn) plusBtn.setAttribute('onclick', `increase('${stat}-${character.id}')`);
-  });
-
-  return clone;
-}
-
-
-
-function updateButtons(id) {
-  const card = document.getElementById(id).closest('.card');
-  const valueEl = document.getElementById(id);
-  const minusBtn = card.querySelector('.btn-minus');
-  const plusBtn = card.querySelector('.btn-plus');
-
-  const current = parseInt(valueEl.innerText);
-  const max = statMax[id.split('-')[1]];
-
-  minusBtn.disabled = (current <= 0);
-  plusBtn.disabled = (current >= max);
-}
-
-function decrease(id) {
-  const valueEl = document.getElementById(id);
-  let current = parseInt(valueEl.innerText);
-  if (current > 0) {
-    valueEl.innerText = current - 1;
-    updateButtons(id);
-  }
-}
-
-function increase(id) {
-  const valueEl = document.getElementById(id);
-  let current = parseInt(valueEl.innerText);
-  const max = statMax[id.split('-')[1]];
-  if (current < max) {
-    valueEl.innerText = current + 1;
-    updateButtons(id);
-  }
-}
-
-function setupButtonLogic() {
-  document.querySelectorAll('.card .btn-minus, .card .btn-plus').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const valueEl = btn.closest('.card').querySelector('.fs-4');
-      if (valueEl && valueEl.id) {
-        updateButtons(valueEl.id);
+    const defaultCharacter = {
+      id: 0,
+      name: "",
+      rank: "-",
+      role: "-",
+      body: ["-", "-", "-"],
+      types: ["-", "-"],
+      stats: {
+        hp: { start: 0, max: 0 },
+        shield: { start: 0, max: 0 },
+        power: { start: 0, max: 0 },
+        move: { start: 0, max: 0 }
+      },
+      ability: {
+        name: "-",
+        description: "-"
       }
-    });
-  });
-}
+    };
 
-window.addEventListener('DOMContentLoaded', () => {
-  fetch('char-card.html')
-    .then(response => response.text())
-    .then(html => {
-      const templateContainer = document.createElement('div');
-      templateContainer.innerHTML = html;
-      document.body.appendChild(templateContainer);
+    const statMax = {}; // statMax[characterId][stat] = max
 
-      const leftTeam = document.querySelector('.col-md-6.pe-md-2 > div');
-      const rightTeam = document.querySelector('.col-md-6.ps-md-2 > div');
+    function createCharacterCard(character) {
+      const template = document.getElementById('character-card-template');
+      const clone = template.content.cloneNode(true);
 
-      characters.forEach((character, index) => {
-        const card = createCharacterCard(character);
+      const cardWrapper = clone.querySelector('.character-card');
+      cardWrapper.dataset.characterId = character.id;
 
-        if (index < 3) {
-          leftTeam.appendChild(card);
-        } else {
-          rightTeam.appendChild(card);
+      clone.querySelector('.character-card').style.backgroundColor = "#f8d7da";
+
+      // Populate dropdown
+      const inputEl = clone.querySelector('.name-input');
+
+      // If this card is already filled, set the value
+      inputEl.value = character.name || "";
+
+      // Listen for user selection
+      inputEl.addEventListener('change', () => {
+        const selectedName = inputEl.value.trim();
+        const selectedChar = allCharacters.find(c => c.name.toLowerCase() === selectedName.toLowerCase());
+        if (!selectedChar) return;
+
+        const cardEl = inputEl.closest('.character-card');
+        const newCard = createCharacterCard(selectedChar);
+        cardEl.replaceWith(newCard);
+      });
+
+      // Fill data
+      clone.querySelector('.rank').innerText = character.rank;
+      clone.querySelector('.role').innerText = character.role;
+      clone.querySelector('.body1').innerText = character.body[0] || "-";
+      clone.querySelector('.body2').innerText = character.body[1] || "-";
+      clone.querySelector('.body3').innerText = character.body[2] || "-";
+      clone.querySelector('.type1').innerText = character.types[0] || "-";
+      clone.querySelector('.type2').innerText = character.types[1] || "-";
+      clone.querySelector('.ability-name').innerText = character.ability.name;
+      clone.querySelector('.ability-description').innerText = character.ability.description;
+
+      const stats = ["hp", "shield", "power", "move"];
+      stats.forEach(stat => {
+        const start = character.stats[stat].start;
+        const max = character.stats[stat].max;
+        const valueId = `${stat}-${character.id}`;
+
+        const valueEl = clone.querySelector(`.${stat}-value`);
+        const maxEl = clone.querySelector(`.${stat}-max`);
+
+        valueEl.innerText = start;
+        valueEl.id = valueId;
+        maxEl.innerText = max;
+
+        const card = valueEl.closest('.card');
+        card.querySelector('.btn-minus').setAttribute("onclick", `decrease('${valueId}')`);
+        card.querySelector('.btn-plus').setAttribute("onclick", `increase('${valueId}')`);
+
+        if (character.id > 0) {
+          statMax[character.id] = statMax[character.id] || {};
+          statMax[character.id][stat] = max;
         }
       });
 
-      setupButtonLogic();
+      return clone;
+    }
+
+    function updateButtons(id) {
+      const [stat, charId] = id.split("-");
+      const valueEl = document.getElementById(id);
+      const card = valueEl.closest('.card');
+      const minusBtn = card.querySelector('.btn-minus');
+      const plusBtn = card.querySelector('.btn-plus');
+
+      const current = parseInt(valueEl.innerText);
+      const max = statMax[charId]?.[stat] ?? 0;
+
+      minusBtn.disabled = (current <= 0);
+      plusBtn.disabled = (current >= max);
+    }
+
+    function decrease(id) {
+      const valueEl = document.getElementById(id);
+      let current = parseInt(valueEl.innerText);
+      if (current > 0) {
+        valueEl.innerText = current - 1;
+        updateButtons(id);
+      }
+    }
+
+    function increase(id) {
+      const valueEl = document.getElementById(id);
+      let current = parseInt(valueEl.innerText);
+      const [stat, charId] = id.split("-");
+      const max = statMax[charId]?.[stat] ?? 0;
+
+      if (current < max) {
+        valueEl.innerText = current + 1;
+        updateButtons(id);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('char-card.html')
+        .then(res => res.text())
+        .then(templateHTML => {
+          const container = document.createElement('div');
+          container.innerHTML = templateHTML;
+          document.body.appendChild(container); // insert the <template> into the DOM
+
+          // Now load characters.json
+          return fetch('characters.json');
+        })
+        .then(res => res.json())
+        .then(data => {
+          allCharacters = data;
+
+          const datalist = document.getElementById('character-options');
+          datalist.innerHTML = ""; // Clear old options
+          data.forEach(char => {
+            const option = document.createElement('option');
+            option.value = char.name;
+            datalist.appendChild(option);
+          });
+
+          const leftTeam = document.querySelector('.team-red');
+          const rightTeam = document.querySelector('.team-blue');
+
+          for (let i = 0; i < 3; i++) {
+            leftTeam.appendChild(createCharacterCard(defaultCharacter));
+            rightTeam.appendChild(createCharacterCard(defaultCharacter));
+          }
+        });
     });
-});
-</script>
+
+    document.getElementById('reset-all-stats').addEventListener('click', () => {
+      const cards = document.querySelectorAll('.character-card');
+
+      cards.forEach(card => {
+        const charId = card.dataset.characterId;
+        const selectedChar = allCharacters.find(c => c.id === parseInt(charId));
+        if (!selectedChar) return; // Skip default/blank cards
+
+        const stats = ['hp', 'shield', 'power', 'move'];
+        stats.forEach(stat => {
+          const valueEl = card.querySelector(`#${stat}-${charId}`);
+          if (valueEl) {
+            valueEl.innerText = selectedChar.stats[stat].start;
+            updateButtons(`${stat}-${charId}`);
+          }
+        });
+      });
+    });
+  </script>
+
+
 
 </body>
+
 </html>

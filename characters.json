@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "Alpha",
+      "rank": 2,
+      "role": "Fighter",
+      "body": ["Large", "Armored", "-"],
+      "types": ["Tank", "Steel"],
+      "stats": {
+        "hp": { "start": 10, "max": 20 },
+        "shield": { "start": 5, "max": 10 },
+        "power": { "start": 8, "max": 15 },
+        "move": { "start": 3, "max": 6 }
+      },
+      "ability": {
+        "name": "Shield Wall",
+        "description": "Reduces incoming damage by 50% for two turns."
+      }
+    },
+    {
+      "id": 2,
+      "name": "Beta",
+      "rank": 3,
+      "role": "Support",
+      "body": ["Slim", "Floating", "-"],
+      "types": ["Healer", "Psychic"],
+      "stats": {
+        "hp": { "start": 6, "max": 12 },
+        "shield": { "start": 2, "max": 6 },
+        "power": { "start": 4, "max": 8 },
+        "move": { "start": 4, "max": 5 }
+      },
+      "ability": {
+        "name": "Restore",
+        "description": "Heals all allies for 4 HP."
+      }
+    },
+    {
+      "id": 3,
+      "name": "Gamma",
+      "rank": 5,
+      "role": "Assassin",
+      "body": ["Small", "Shadowy", "-"],
+      "types": ["Dark", "Speed"],
+      "stats": {
+        "hp": { "start": 7, "max": 10 },
+        "shield": { "start": 0, "max": 3 },
+        "power": { "start": 10, "max": 12 },
+        "move": { "start": 6, "max": 8 }
+      },
+      "ability": {
+        "name": "Ambush",
+        "description": "Ignores shields and doubles damage when attacking first."
+      }
+    }
+  ]
+  

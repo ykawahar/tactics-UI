@@ -1,0 +1,206 @@
+<script>
+const characters = [
+  {
+    id: 1,
+    name: 'Alpha',
+    rank: 2,
+    role: 'Fighter',
+    body1: 'Large',
+    body2: 'Armored',
+    body3: '-',
+    type1: 'Tank',
+    type2: 'Steel',
+    hp: 10,
+    shield: 5,
+    power: 8,
+    move: 3,
+    max: 20,
+    abilityName: 'Shield Wall',
+    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
+    teamBgColor: '#f8d7da' // red team color
+  },
+  {
+    id: 1,
+    name: 'Alpha',
+    rank: 2,
+    role: 'Fighter',
+    body1: 'Large',
+    body2: 'Armored',
+    body3: '-',
+    type1: 'Tank',
+    type2: 'Steel',
+    hp: 10,
+    shield: 5,
+    power: 8,
+    move: 3,
+    max: 20,
+    abilityName: 'Shield Wall',
+    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
+    teamBgColor: '#f8d7da' // red team color
+  },
+  {
+    id: 1,
+    name: 'Alpha',
+    rank: 2,
+    role: 'Fighter',
+    body1: 'Large',
+    body2: 'Armored',
+    body3: '-',
+    type1: 'Tank',
+    type2: 'Steel',
+    hp: 10,
+    shield: 5,
+    power: 8,
+    move: 3,
+    max: 20,
+    abilityName: 'Shield Wall',
+    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
+    teamBgColor: '#f8d7da' // red team color
+  },
+  {
+    id: 1,
+    name: 'Alpha',
+    rank: 2,
+    role: 'Fighter',
+    body1: 'Large',
+    body2: 'Armored',
+    body3: '-',
+    type1: 'Tank',
+    type2: 'Steel',
+    hp: 10,
+    shield: 5,
+    power: 8,
+    move: 3,
+    max: 20,
+    abilityName: 'Shield Wall',
+    abilityDescription: 'Reduces incoming damage by 50% for two turns.',
+    teamBgColor: '#f8d7da' // red team color
+  }
+];
+
+// Stat max values
+const statMax = {
+  1: 20,
+};
+
+function createCharacterCard(character) {
+  const template = document.getElementById('character-card-template');
+  const clone = template.content.cloneNode(true);
+
+  // Background color (team color)
+  clone.querySelector('.character-card').style.backgroundColor = character.teamBgColor;
+
+  // Set main fields
+  clone.querySelector('.rank').innerText = character.rank;
+  clone.querySelector('.role').innerText = character.role || '-'; // if you have role
+  clone.querySelector('.name').innerText = character.name;
+
+  clone.querySelector('.body1').innerText = character.body1;
+  clone.querySelector('.body2').innerText = character.body2;
+  clone.querySelector('.body3').innerText = character.body3;
+  clone.querySelector('.type1').innerText = character.type1;
+  clone.querySelector('.type2').innerText = character.type2;
+
+  clone.querySelector('.ability-name').innerText = character.abilityName;
+  clone.querySelector('.ability-description').innerText = character.abilityDescription;
+
+  // Set stat values
+  clone.querySelector('.hp-value').innerText = character.hp;
+  clone.querySelector('.shield-value').innerText = character.shield;
+  clone.querySelector('.power-value').innerText = character.power;
+  clone.querySelector('.move-value').innerText = character.move;
+
+  clone.querySelector('.hp-max').innerText = character.max;
+  clone.querySelector('.shield-max').innerText = character.max;
+  clone.querySelector('.power-max').innerText = character.max;
+  clone.querySelector('.move-max').innerText = character.max;
+
+  // Dynamically update IDs for each stat block
+  clone.querySelector('.hp-value').id = `hp-${character.id}`;
+  clone.querySelector('.shield-value').id = `shield-${character.id}`;
+  clone.querySelector('.power-value').id = `power-${character.id}`;
+  clone.querySelector('.move-value').id = `move-${character.id}`;
+
+  // Update button onclicks (+ and -) dynamically
+  const stats = ['hp', 'shield', 'power', 'move'];
+  stats.forEach(stat => {
+    const minusBtn = clone.querySelector(`.${stat}-value`).closest('.card').querySelector('.btn-minus');
+    const plusBtn = clone.querySelector(`.${stat}-value`).closest('.card').querySelector('.btn-plus');
+
+    if (minusBtn) minusBtn.setAttribute('onclick', `decrease('${stat}-${character.id}')`);
+    if (plusBtn) plusBtn.setAttribute('onclick', `increase('${stat}-${character.id}')`);
+  });
+
+  return clone;
+}
+
+
+
+function updateButtons(id) {
+  const card = document.getElementById(id).closest('.card');
+  const valueEl = document.getElementById(id);
+  const minusBtn = card.querySelector('.btn-minus');
+  const plusBtn = card.querySelector('.btn-plus');
+
+  const current = parseInt(valueEl.innerText);
+  const max = statMax[id.split('-')[1]];
+
+  minusBtn.disabled = (current <= 0);
+  plusBtn.disabled = (current >= max);
+}
+
+function decrease(id) {
+  const valueEl = document.getElementById(id);
+  let current = parseInt(valueEl.innerText);
+  if (current > 0) {
+    valueEl.innerText = current - 1;
+    updateButtons(id);
+  }
+}
+
+function increase(id) {
+  const valueEl = document.getElementById(id);
+  let current = parseInt(valueEl.innerText);
+  const max = statMax[id.split('-')[1]];
+  if (current < max) {
+    valueEl.innerText = current + 1;
+    updateButtons(id);
+  }
+}
+
+function setupButtonLogic() {
+  document.querySelectorAll('.card .btn-minus, .card .btn-plus').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const valueEl = btn.closest('.card').querySelector('.fs-4');
+      if (valueEl && valueEl.id) {
+        updateButtons(valueEl.id);
+      }
+    });
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  fetch('char-card.html')
+    .then(response => response.text())
+    .then(html => {
+      const templateContainer = document.createElement('div');
+      templateContainer.innerHTML = html;
+      document.body.appendChild(templateContainer);
+
+      const leftTeam = document.querySelector('.team-red');
+      const rightTeam = document.querySelector('.team-blue');
+
+      characters.forEach((character, index) => {
+        const card = createCharacterCard(character);
+
+        if (index < 3) {
+          leftTeam.appendChild(card);
+        } else {
+          rightTeam.appendChild(card);
+        }
+      });
+
+      setupButtonLogic();
+    });
+});
+</script>
