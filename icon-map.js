@@ -10,10 +10,6 @@ const iconMap = {
     "Mage":       { type: "fa", value: "fa-hat-wizard" },
 
 
-    // Image examples
-    "Psychic":    { type: "img", value: "icons/psychic.svg" },
-    "Shadowy":    { type: "img", value: "icons/shadowy.svg" },
-
 
     // Types
     "Normal":    { type: "img", value: "icons/types/Normal_icon_HOME3.png" },
