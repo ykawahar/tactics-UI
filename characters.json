@@ -1,6 +1,6 @@
 [
     {
-      "id": 1,
+      "id": -1,
       "name": "Alpha",
       "rank": 2,
       "role": "Fighter",
@@ -18,7 +18,7 @@
       }
     },
     {
-      "id": 2,
+      "id": -2,
       "name": "Beta",
       "rank": 3,
       "role": "Support",
@@ -36,7 +36,7 @@
       }
     },
     {
-      "id": 3,
+      "id": -3,
       "name": "Gamma",
       "rank": 5,
       "role": "Assassin",
@@ -52,6 +52,24 @@
         "name": "Ambush",
         "description": "Ignores shields and doubles damage when attacking first."
       }
-    }
+    },
+    {
+        "id": 6,
+        "name": "Charizard",
+        "rank": 6,
+        "role": "Fighter",
+        "body": ["Flight"],
+        "types": ["Fire", "Flying"],
+        "stats": {
+          "hp": { "start": 8, "max": 8 },
+          "shield": { "start": 0, "max": 4 },
+          "power": { "start": 1, "max": 5 },
+          "move": { "start": 1, "max": 5 }
+        },
+        "ability": {
+          "name": "Blaze",
+          "description": "Deal +1 damage with [Fire] moves at half HP or less."
+        }
+      }
   ]
   
