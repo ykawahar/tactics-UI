@@ -1,12 +1,12 @@
 /* Global base settings */
 html, body {
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
   }
   
   .container-fluid {
-    height: 100%;
+    height: 100vh;
     padding: 0;
   }
 
@@ -16,16 +16,20 @@ html, body {
     }
   }
 
+  .row.full-height {
+    height: 100%;
+  }
+
 /* Team sections */
 .team-red {
     background-color: salmon;
-    padding: 0.5rem;
+    padding: 0.25rem;
     height: 100%;
 }
 
 .team-blue {
     background-color: lightblue;
-    padding: 0.5rem;
+    padding: 0.25rem;
     height: 100%;
 }
 
@@ -55,6 +59,11 @@ html, body {
     flex-direction: column;
   }
 
+  .card-body {
+    flex-grow: 1;
+    min-height: 0;
+  }
+
 /* Smaller card details */
 .character-card .card-header,
 .character-card .card-body,
@@ -69,19 +78,14 @@ html, body {
 .character-card h3,
 .character-card h5 {
     font-size: 1rem;
-    margin-bottom: 0.25rem;
 }
 
-.character-card p {
-    font-size: 0.8rem;
-    margin-bottom: 0.25rem;
-}
 
 
 
 /* Make top row headers smaller */
 .small-header {
-    font-size: 0.7rem;
+    /* font-size: 0.7rem; */
     padding: 0.25rem 0.5rem;
 }
 
