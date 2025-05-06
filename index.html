@@ -18,6 +18,13 @@
   </datalist>
   <div class="container-fluid m-0 p-0">
     <div class="d-flex justify-content-end px-3 py-2">
+      <div class="d-flex align-items-center gap-2">
+        <label for="mode-select" class="mb-0 me-1">Mode:</label>
+        <select id="mode-select" class="form-select form-select-sm w-auto">
+          <option value="characters.json">Default</option>
+          <option value="characters_alt.json">Alt</option>
+        </select>
+      </div>
       <button id="reset-all-stats" class="btn btn-sm btn-danger">
         <strong>Reset All Stats</strong>
       </button>
@@ -63,6 +70,7 @@
       }
     };
 
+    const statMin = {}; // statMin[characterId][stat] = min. ADDED FOR ALT
     const statMax = {}; // statMax[characterId][stat] = max
 
     function createCharacterCard(character, teamColor = "#ffffff") {
@@ -88,7 +96,7 @@
         if (!selectedChar) return;
 
         const cardEl = inputEl.closest('.character-card');
-        const teamColor = cardEl.dataset.teamColor || "##ffffff";
+        const teamColor = cardEl.dataset.teamColor || "#ffffff";
         const newCard = createCharacterCard(selectedChar, teamColor);
         cardEl.replaceWith(newCard);
       });
@@ -138,6 +146,10 @@
         if (character.id > 0) {
           statMax[character.id] = statMax[character.id] || {};
           statMax[character.id][stat] = max;
+
+          statMin[character.id] = statMin[character.id] || {}; //ADDED FOR ALT
+          statMin[character.id][stat] = character.stats[stat].min ?? 0; //ADDED FOR ALT
+
         }
       });
 
@@ -209,14 +221,22 @@
       const current = parseInt(valueEl.innerText);
       const max = statMax[charId]?.[stat] ?? 0;
 
-      minusBtn.disabled = (current <= 0);
+      const min = statMin[charId]?.[stat] ?? 0; //ADDED FOR ALT
+      minusBtn.disabled = (current <= min); //ADDED FOR ALT
+
+      // minusBtn.disabled = (current <= 0);
       plusBtn.disabled = (current >= max);
     }
 
     function decrease(id) {
       const valueEl = document.getElementById(id);
       let current = parseInt(valueEl.innerText);
-      if (current > 0) {
+
+      const [stat, charId] = id.split("-"); //3 LINES ADDED FOR ALT
+      const min = statMin[charId]?.[stat] ?? 0;
+      if (current > min) {
+
+      // if (current > 0) {
         valueEl.innerText = current - 1;
         updateButtons(id);
       }
@@ -285,8 +305,47 @@
         });
       });
     });
-  </script>
 
+    document.getElementById('mode-select').addEventListener('change', e => {
+      const selectedFile = e.target.value;
+      loadCharactersFromFile(selectedFile);
+    });
+
+    function loadCharactersFromFile(jsonFile) {
+      fetch(jsonFile)
+        .then(res => res.json())
+        .then(data => {
+          allCharacters = data;
+
+          // Populate the character name datalist
+          const datalist = document.getElementById('character-options');
+          datalist.innerHTML = "";
+          data.forEach(char => {
+            const option = document.createElement('option');
+            option.value = char.name;
+            datalist.appendChild(option);
+          });
+
+          // Clear existing team cards
+          document.querySelectorAll(".team-red, .team-blue").forEach(team => {
+            team.innerHTML = "";
+          });
+
+          // Render 3 blank cards per team
+          const leftTeam = document.querySelector('.team-red');
+          const rightTeam = document.querySelector('.team-blue');
+
+          for (let i = 0; i < 3; i++) {
+            leftTeam.appendChild(createCharacterCard(defaultCharacter, "#f8d7da"));   // red team
+            rightTeam.appendChild(createCharacterCard(defaultCharacter, "#dbeafe"));  // blue team
+          }
+        })
+        .catch(err => {
+          console.error("Failed to load character file:", jsonFile, err);
+        });
+    }
+
+  </script>
 
 
 </body>
