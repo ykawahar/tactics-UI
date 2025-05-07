@@ -68,7 +68,7 @@
         },
         "ability": {
           "name": "Torrent",
-          "description": "At half [HP] or less, add the number of [Shield] on Squirtle to damage."
+          "description": "At the beginning of your turn, you may search for a [Water] Action card, reveal it, and add it to your hand. Shuffle your deck afterwards. At half [HP] or less, add the number of [Shield] on Squirtle to damage."
         }
       },
       {
