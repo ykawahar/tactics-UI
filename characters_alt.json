@@ -10,7 +10,7 @@
           "hp": { "start": 8, "max": 8 },
           "shield": { "start": 4, "max": 10, "min": -2 },
           "power": { "start": 5, "max": 11, "min": -1 },
-          "move": { "start": 1, "max": 5 }
+          "move": { "start": 1, "max": 5, "min": 1 }
         },
         "ability": {
           "name": "Blaze",
@@ -28,7 +28,7 @@
           "hp": { "start": 4, "max": 4 },
           "shield": { "start": 2, "max": 8, "min": -4 },
           "power": { "start": 3, "max": 9, "min": -3 },
-          "move": { "start": 1, "max": 3 }
+          "move": { "start": 1, "max": 3, "min": 1 }
         },
         "ability": {
           "name": "Flash Fire",
@@ -46,7 +46,7 @@
           "hp": { "start": 6, "max": 6 },
           "shield": { "start": 2, "max": 8, "min": -4 },
           "power": { "start": 4, "max": 10, "min": -2 },
-          "move": { "start": 1, "max": 3 }
+          "move": { "start": 1, "max": 3, "min": 1 }
         },
         "ability": {
           "name": "Intimidate",
@@ -64,7 +64,7 @@
           "hp": { "start": 4, "max": 4 },
           "shield": { "start": 3, "max": 9, "min": -3 },
           "power": { "start": 2, "max": 8, "min": -4 },
-          "move": { "start": 1, "max": 2 }
+          "move": { "start": 1, "max": 2, "min": 1 }
         },
         "ability": {
           "name": "Torrent",
@@ -82,7 +82,7 @@
           "hp": { "start": 8, "max": 8 },
           "shield": { "start": 5, "max": 11, "min": -1 },
           "power": { "start": 5, "max": 11, "min": -1 },
-          "move": { "start": 1, "max": 4 }
+          "move": { "start": 1, "max": 4, "min": 1 }
         },
         "ability": {
           "name": "Sheer Force",
@@ -100,7 +100,7 @@
           "hp": { "start": 8, "max": 8 },
           "shield": { "start": 3, "max": 9, "min": -3 },
           "power": { "start": 4, "max": 10, "min": -2 },
-          "move": { "start": 1, "max": 3 }
+          "move": { "start": 1, "max": 3, "min": 1 }
         },
         "ability": {
           "name": "Shell Armor",
@@ -118,7 +118,7 @@
           "hp": { "start": 8, "max": 8 },
           "shield": { "start": 4, "max": 10, "min": -2 },
           "power": { "start": 6, "max": 12, "min": 0 },
-          "move": { "start": 1, "max": 4 }
+          "move": { "start": 1, "max": 4, "min": 1 }
         },
         "ability": {
           "name": "Speed Boost",
@@ -136,7 +136,7 @@
           "hp": { "start": 8, "max": 8 },
           "shield": { "start": 3, "max": 9, "min": -3 },
           "power": { "start": 6, "max": 12, "min": 0 },
-          "move": { "start": 1, "max": 6 }
+          "move": { "start": 1, "max": 6, "min": 1 }
         },
         "ability": {
           "name": "Sniper",
@@ -154,7 +154,7 @@
           "hp": { "start": 10, "max": 10 },
           "shield": { "start": 5, "max": 11, "min": -1 },
           "power": { "start": 6, "max": 12, "min": 0 },
-          "move": { "start": 1, "max": 4 }
+          "move": { "start": 1, "max": 4, "min": 1 }
         },
         "ability": {
           "name": "Grassy Surge",
@@ -172,7 +172,7 @@
           "hp": { "start": 6, "max": 6 },
           "shield": { "start": 3, "max": 9, "min": -3 },
           "power": { "start": 3, "max": 6, "min": -3 },
-          "move": { "start": 1, "max": 3 }
+          "move": { "start": 1, "max": 3, "min": 1 }
         },
         "ability": {
           "name": "Grass Pelt",
@@ -190,7 +190,7 @@
           "hp": { "start": 6, "max": 6 },
           "shield": { "start": 3, "max": 6, "min": -3 },
           "power": { "start": 3, "max": 6, "min": -3 },
-          "move": { "start": 1, "max": 3 }
+          "move": { "start": 1, "max": 3, "min": 1 }
         },
         "ability": {
           "name": "Prankster",
@@ -208,7 +208,7 @@
           "hp": { "start": 4, "max": 4 },
           "shield": { "start": 3, "max": 6, "min": -3 },
           "power": { "start": 3, "max": 6, "min":-3 },
-          "move": { "start": 1, "max": 2 }
+          "move": { "start": 1, "max": 2, "min": 1 }
         },
         "ability": {
           "name": "Overgrow",
