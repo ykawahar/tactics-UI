@@ -104,7 +104,7 @@
         },
         "ability": {
           "name": "Shell Armor",
-          "description": "[Shield] cannot be ignored by incoming attacks. If hit by a [Contact] <em>Slicing</em> move, deal 1 dmg back to the attacker."
+          "description": "[Shield] cannot be ignored by incoming attacks. If hit by a <em>Slicing</em> move, deal 1 damage back to the attacker."
         }
       },
       {
