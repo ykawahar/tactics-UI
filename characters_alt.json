@@ -142,6 +142,78 @@
           "name": "Sniper",
           "description": "Ignore [Shield] when attacking from range 3 or greater. At the end of your turn, if Inteleon did not move or perform an action, it becomes <strong>Guarded</strong>."
         }
+      },
+            {
+        "id": 812,
+        "name": "Rillaboom",
+        "rank": 6,
+        "role": "Fighter",
+        "body": ["Walk"],
+        "types": ["Grass"],
+        "stats": {
+          "hp": { "start": 10, "max": 10 },
+          "shield": { "start": 5, "max": 11, "min": -1 },
+          "power": { "start": 6, "max": 12, "min": 0 },
+          "move": { "start": 1, "max": 4 }
+        },
+        "ability": {
+          "name": "Grassy Surge",
+          "description": "Spaces within Range 2 of Rillaboom are Grassy Terrain. At the end of each turn, all [Walk] Pokemon on Grassy Terrain heal +1 HP."
+        }
+      },
+      {
+        "id": 672,
+        "name": "Skiddo",
+        "rank": 2,
+        "role": "Tank",
+        "body": ["Walk"],
+        "types": ["Grass"],
+        "stats": {
+          "hp": { "start": 6, "max": 6 },
+          "shield": { "start": 3, "max": 9, "min": -3 },
+          "power": { "start": 3, "max": 6, "min": -3 },
+          "move": { "start": 1, "max": 3 }
+        },
+        "ability": {
+          "name": "Grass Pelt",
+          "description": "Starts with 1 Shield. At the beginning of your turn, if Skiddo is on Grassy Terrain, gain +1 Shield."
+        }
+      },
+      {
+        "id": 547,
+        "name": "Whimsicott",
+        "rank": 5,
+        "role": "Support",
+        "body": ["Flight"],
+        "types": ["Grass", "Fairy"],
+        "stats": {
+          "hp": { "start": 6, "max": 6 },
+          "shield": { "start": 3, "max": 6, "min": -3 },
+          "power": { "start": 3, "max": 6, "min": -3 },
+          "move": { "start": 1, "max": 3 }
+        },
+        "ability": {
+          "name": "Prankster",
+          "description": "Draw a card after every time Whimsicott makes a [Status] Action."
+        }
+      },
+      {
+        "id": 1,
+        "name": "Bulbasaur",
+        "rank": 2,
+        "role": "Mage",
+        "body": ["Walk"],
+        "types": ["Grass", "Poison"],
+        "stats": {
+          "hp": { "start": 4, "max": 4 },
+          "shield": { "start": 3, "max": 6, "min": -3 },
+          "power": { "start": 3, "max": 6, "min":-3 },
+          "move": { "start": 1, "max": 2 }
+        },
+        "ability": {
+          "name": "Overgrow",
+          "description": "At the beginning of your turn, you may search for a [Grass] Action card (excluding Ultimates), reveal it, and add it to your hand. Shuffle your deck afterwards. At half [HP] or less, Bulbasaur's moves have +1 range."
+        }
       }
   ]
   
