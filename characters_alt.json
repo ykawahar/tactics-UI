@@ -26,7 +26,7 @@
         "types": ["Fire"],
         "stats": {
           "hp": { "start": 4, "max": 4 },
-          "shield": { "start": 2, "max": 8, "min": -4 },
+          "shield": { "start": 3, "max": 9, "min": -3 },
           "power": { "start": 3, "max": 9, "min": -3 },
           "move": { "start": 1, "max": 3, "min": 1 }
         },
@@ -63,7 +63,7 @@
         "stats": {
           "hp": { "start": 4, "max": 4 },
           "shield": { "start": 3, "max": 9, "min": -3 },
-          "power": { "start": 2, "max": 8, "min": -4 },
+          "power": { "start": 3, "max": 9, "min": -3 },
           "move": { "start": 1, "max": 2, "min": 1 }
         },
         "ability": {
@@ -188,9 +188,9 @@
         "types": ["Grass", "Fairy"],
         "stats": {
           "hp": { "start": 6, "max": 6 },
-          "shield": { "start": 3, "max": 6, "min": -3 },
-          "power": { "start": 3, "max": 6, "min": -3 },
-          "move": { "start": 1, "max": 3, "min": 1 }
+          "shield": { "start": 4, "max": 10, "min": -2 },
+          "power": { "start": 4, "max": 10, "min": -2 },
+          "move": { "start": 1, "max": 6, "min": 1 }
         },
         "ability": {
           "name": "Prankster",
@@ -213,6 +213,78 @@
         "ability": {
           "name": "Overgrow",
           "description": "At the beginning of your turn, you may search for a [Grass] Action card (excluding Ultimates), reveal it, and add it to your hand. Shuffle your deck afterwards. At half [HP] or less, Bulbasaur's moves have +1 range."
+        }
+      },
+      {
+        "id": 25,
+        "name": "Pikachu",
+        "rank": 2,
+        "role": "Mage",
+        "body": ["Walk"],
+        "types": ["Electric"],
+        "stats": {
+          "hp": { "start": 4, "max": 4 },
+          "shield": { "start": 3, "max": 9, "min": -3 },
+          "power": { "start": 3, "max": 9, "min": -3 },
+          "move": { "start": 1, "max": 5, "min": 1 }
+        },
+        "ability": {
+          "name": "Static",
+          "description": "On each turn, the first time Pikachu is hit by a [Contact] move, the attacker is Paralyzed and Pikachu gains 1 Move."
+        }
+      },
+      {
+        "id": 179,
+        "name": "Mareep",
+        "rank": 1,
+        "role": "Tank",
+        "body": ["Walk"],
+        "types": ["Electric"],
+        "stats": {
+          "hp": { "start": 6, "max": 6 },
+          "shield": { "start": 2, "max": 8, "min": -4 },
+          "power": { "start": 3, "max": 9, "min": -3 },
+          "move": { "start": 1, "max": 2, "min": 1 }
+        },
+        "ability": {
+          "name": "Static",
+          "description": "Every time Mareep uses an [Electric] [Status] move, Mareep gains 1 [Shield]. On each turn, the first time Mareep is hit by a [Contact] move, the attacker is Paralyzed."
+        }
+      },
+      {
+        "id": 695,
+        "name": "Heliolisk",
+        "rank": 5,
+        "role": "Mage",
+        "body": ["Walk", "Swim"],
+        "types": ["Electric", "Normal"],
+        "stats": {
+          "hp": { "start": 6, "max": 6 },
+          "shield": { "start": 5, "max": 11, "min": -1 },
+          "power": { "start": 5, "max": 11, "min": -1 },
+          "move": { "start": 1, "max": 5, "min": 1 }
+        },
+        "ability": {
+          "name": "Solar Power",
+          "description": "At the beginning of your turn, if the weather is Sunny, you may search your deck for a [Electric] card (excluding Ultimates), reveal it, and add it to your hand. Shuffle your deck afterwards. If the weather is Rain, Heliolisk heals 1 [HP]. If the weather is Sandstorm, Heliolisk gains 1 [Shield]."
+        }
+      },
+      {
+        "id": 523,
+        "name": "Zebstrika",
+        "rank": 6,
+        "role": "Assassin",
+        "body": ["Walk"],
+        "types": ["Electric"],
+        "stats": {
+          "hp": { "start": 8, "max": 8 },
+          "shield": { "start": 3, "max": 9, "min": -3 },
+          "power": { "start": 5, "max": 11, "min": -1 },
+          "move": { "start": 1, "max": 6, "min": 1 }
+        },
+        "ability": {
+          "name": "Motor Drive",
+          "description": "Unless Zebstrika is the only remaining Pokémon on your team, gain +1 [Move] if hit by an [Electric] move instead of taking damage."
         }
       }
   ]
