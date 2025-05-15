@@ -286,6 +286,24 @@
           "name": "Motor Drive",
           "description": "Unless Zebstrika is the only remaining Pokémon on your team, gain +1 [Move] if hit by an [Electric] move instead of taking damage."
         }
+      },
+      {
+        "id": 162,
+        "name": "Furret",
+        "rank": 3,
+        "role": "Support",
+        "body": ["Walk", "Dig"],
+        "types": ["Normal"],
+        "stats": {
+          "hp": { "start": 8, "max": 8 },
+          "shield": { "start": 0, "max": 3 },
+          "power": { "start": 1, "max": 4, "min": 1 },
+          "move": { "start": 1, "max": 5, "min": 1 }
+        },
+        "ability": {
+          "name": "Run Away",
+          "description": "At the end of every turn, if Furret is adjacent to an enemy, it can move up to 2 spaces."
+        }
       }
   ]
   
