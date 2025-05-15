@@ -68,7 +68,7 @@
         },
         "ability": {
           "name": "Torrent",
-          "description": "At the beginning of your turn, you may search for a [Water] Action card, reveal it, and add it to your hand. Shuffle your deck afterwards. At half [HP] or less, add the number of [Shield] on Squirtle to damage."
+          "description": "At the beginning of your turn, instead of drawing a card, you may search for a [Water] Action card, reveal it, and add it to your hand. Shuffle your deck afterwards. At half [HP] or less, add the number of [Shield] on Squirtle to damage."
         }
       },
       {
@@ -104,7 +104,7 @@
         },
         "ability": {
           "name": "Shell Armor",
-          "description": "[Shield] cannot be ignored by incoming attacks. If hit by a [Contact] <em>Slicing</em> move, deal 1 dmg back to the attacker."
+          "description": "[Shield] cannot be ignored by incoming attacks. If hit by a Slicing move, deal 1 dmg back to the attacker."
         }
       },
       {
@@ -212,7 +212,7 @@
         },
         "ability": {
           "name": "Overgrow",
-          "description": "At the beginning of your turn, you may search for a [Grass] Action card (excluding Ultimates), reveal it, and add it to your hand. Shuffle your deck afterwards. At half [HP] or less, Bulbasaur's moves have +1 range."
+          "description": "At the beginning of your turn, instead of drawing a card, you may search for a [Grass] Action card (excluding Ultimates), reveal it, and add it to your hand. Shuffle your deck afterwards. At half [HP] or less, Bulbasaur's moves have +1 range."
         }
       },
       {
