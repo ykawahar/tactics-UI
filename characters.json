@@ -320,7 +320,7 @@
         },
         "ability": {
           "name": "Run Away",
-          "description": "At the end of every turn, if Furret is adjacent to an enemy, it can move up to 2 spaces or its Move stat, whichever is higher."
+          "description": "At the end of every turn, if Furret is adjacent to an enemy, it can move up to 2 spaces."
         }
       },
       {
