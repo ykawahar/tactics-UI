@@ -42,6 +42,8 @@ const iconMap = {
     "Walk":    { type: "fa", value: "fa-solid fa-horse" },
     "Flight":    { type: "fa", value: "fa-solid fa-dove" },
     "Swim":    { type: "fa", value: "fa-solid fa-fish" },
+    "Dig":    { type: "fa", value: "fa-solid fa-worm" },
+    "Spirit":    { type: "fa", value: "fa-solid fa-ghost" },
 
     
     // fallback

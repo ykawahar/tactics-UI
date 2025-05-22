@@ -32,7 +32,7 @@
         },
         "ability": {
           "name": "Flash Fire",
-          "description": "Unless Cyndaquil is the only remaining Pokémon on your team, gain +1 [Shield] if hit by a [Fire] move instead of taking damage."
+          "description": "Unless Cyndaquil is the only remaining Pokémon on your team, gain +1 [Shield] if hit by a [Fire] move instead of taking damage or its effects."
         }
       },
       {
@@ -122,7 +122,7 @@
         },
         "ability": {
           "name": "Speed Boost",
-          "description": "At the end of your turn, Blaziken gains +1 [Move]."
+          "description": "At the end of your turn, Blaziken gains 1 [Move]."
         }
       },
       {
@@ -158,7 +158,7 @@
         },
         "ability": {
           "name": "Grassy Surge",
-          "description": "Spaces within Range 2 of Rillaboom are Grassy Terrain. At the end of each turn, all [Walk] Pokemon on Grassy Terrain heal +1 HP."
+          "description": "Spaces within Range 2 of Rillaboom are Grassy Terrain. At the end of your turn, all [Walk] Pokemon on Grassy Terrain heal 1 HP."
         }
       },
       {
@@ -184,7 +184,7 @@
         "name": "Whimsicott",
         "rank": 5,
         "role": "Support",
-        "body": ["Flight"],
+        "body": ["Spirit"],
         "types": ["Grass", "Fairy"],
         "stats": {
           "hp": { "start": 6, "max": 6 },
@@ -194,7 +194,7 @@
         },
         "ability": {
           "name": "Prankster",
-          "description": "Draw a card after every time Whimsicott makes a [Status] Action."
+          "description": "Draw a card each time Whimsicott makes a [Status] Action."
         }
       },
       {
@@ -284,7 +284,7 @@
         },
         "ability": {
           "name": "Motor Drive",
-          "description": "Unless Zebstrika is the only remaining Pokémon on your team, gain +1 [Move] if hit by an [Electric] move instead of taking damage."
+          "description": "Unless Zebstrika is the only remaining Pokémon on your team, gain +1 [Move] if hit by an [Electric] move instead of taking damage/effects."
         }
       },
       {
@@ -320,7 +320,7 @@
         },
         "ability": {
           "name": "Run Away",
-          "description": "At the end of every turn, if Furret is adjacent to an enemy, it can move up to 2 spaces."
+          "description": "At the end of every turn, if Eevee is adjacent to an enemy, it can move up to 2 spaces."
         }
       },
       {
@@ -331,8 +331,8 @@
         "body": ["Walk"],
         "types": ["Normal"],
         "stats": {
-          "hp": { "start": 4, "max": 4 },
-          "shield": { "start": 0, "max": 2 },
+          "hp": { "start": 5, "max": 5 },
+          "shield": { "start": 0, "max": 1 },
           "power": { "start": 1, "max": 2, "min": 1 },
           "move": { "start": 1, "max": 5, "min": 1 }
         },
