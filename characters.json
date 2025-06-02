@@ -349,15 +349,14 @@
         "body": ["Flight", "Swim"],
         "types": ["Flying", "Water"],
         "stats": {
-          "hp": { "start": 8, "max": 8 },
-          "shield": { "start": 0, "max": 4 },
+          "hp": { "start": 4, "max": 4 },
+          "shield": { "start": 0, "max": 8 },
           "power": { "start": 1, "max": 4, "min": 1 },
           "move": { "start": 1, "max": 4, "min": 1 }
         },
         "ability": {
           "name": "Gulp Missile",
-          "description": "When Cramorant uses Dive or Surf, the card is put in a Stockpile pile. When Cramorant takes damage and there is a card in the Stockpile, move a card from the Stockpile to the Discard pile and deal 1 damage back to the attacker. If Cramorant is at 3 [HP] or less, the attacker is also Paralyzed. Stockpiled cards are not reshuffled back when the discard is reshuffled."
-        }
+          "description": "When Cramorant uses Dive or Surf, gain 1 [Shield]. If Cramorant is damaged, deal 1 damage back to the attacker. If the attacker reduces Cramorant's [HP], they are also paralyzed. This ability cannot be copied, changed, or removed."}
       },
       {
         "id": 580,
@@ -386,7 +385,7 @@
         "types": ["Water", "Flying"],
         "stats": {
           "hp": { "start": 4, "max": 4 },
-          "shield": { "start": 1, "max": 2 },
+          "shield": { "start": 0, "max": 2 },
           "power": { "start": 1, "max": 3, "min": 1 },
           "move": { "start": 1, "max": 4, "min": 1 }
         },
