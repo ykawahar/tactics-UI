@@ -463,7 +463,7 @@
         },
         "ability": {
           "name": "Thick Fat",
-          "description": "Attacks deal -1 damage to Tepig. Starts with 1 Shield."
+          "description": "Attacks deal -1 damage to Tepig (min. 1 dmg). Starts with 2 [Shield]."
         }
       },
       {
@@ -482,6 +482,60 @@
         "ability": {
           "name": "Flash Fire",
           "description": "Unless Litwick is the only remaining Pokémon on your team, gain +1 [Power] if hit by a [Fire] move instead of taking damage or its effects."
+        }
+      },
+      {
+        "id": 448,
+        "name": "Lucario",
+        "rank": 6,
+        "role": "Fighter",
+        "body": ["Walk"],
+        "types": ["Fighting", "Steel"],
+        "stats": {
+          "hp": { "start": 8, "max": 8 },
+          "shield": { "start": 0, "max": 4 },
+          "power": { "start": 1, "max": 6, "min": 1 },
+          "move": { "start": 1, "max": 5, "min": 1 }
+        },
+        "ability": {
+          "name": "Inner Focus",
+          "description": "Lucario is unaffected by Intimidate and effects that cause discards from incoming attacks. You may discard a [Fighting] Lucario card as an Action to search for any card."
+        }
+      },
+      {
+        "id": 475,
+        "name": "Gallade",
+        "rank": 6,
+        "role": "Assassin",
+        "body": ["Walk", "Warp"],
+        "types": ["Psychic", "Fighting"],
+        "stats": {
+          "hp": { "start": 6, "max": 6 },
+          "shield": { "start": 0, "max": 5 },
+          "power": { "start": 1, "max": 6, "min": 1 },
+          "move": { "start": 1, "max": 4, "min": 1 }
+        },
+        "ability": {
+          "name": "Sharpness",
+          "description": "Add 1 Power to <em>Slicing</em> moves. If hit by a <em>Slicing</em> move, deal 1 damage back to the attacker."
+        }
+      },
+      {
+        "id": 559,
+        "name": "Scraggy",
+        "rank": 2,
+        "role": "Tank",
+        "body": ["Walk"],
+        "types": ["Dark", "Fighting"],
+        "stats": {
+          "hp": { "start": 6, "max": 6 },
+          "shield": { "start": 0, "max": 4 },
+          "power": { "start": 1, "max": 4, "min": 1 },
+          "move": { "start": 1, "max": 2, "min": 1 }
+        },
+        "ability": {
+          "name": "Shed Skin",
+          "description": "Starts with 1 [Shield]. Once per turn, remove a [Shield] to remove status effects from Scraggy."
         }
       }
   ]
