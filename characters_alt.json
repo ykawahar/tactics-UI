@@ -39,7 +39,7 @@
         "id": 58,
         "name": "Growlithe",
         "rank": 2,
-        "role": "Fighter",
+        "role": "Support",
         "body": ["Walk"],
         "types": ["Fire"],
         "stats": {
